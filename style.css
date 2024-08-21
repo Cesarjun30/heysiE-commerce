@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --rosado--: #ff70c2;
+  --VerdeClaro--: #68d943;
+  --VerdeOscuro--: #51a835;
+  --Negro--: #040404;
+  --Blanco-: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+
+
+p,
+h1,
+h2 {
+  font-size: 1.4rem;
+}
+
+body, main {
+  max-width: 100vw;
+}
+/*Pantallas Grandes 1920 en adelante */
+header {
+  width: 100vw; 
+  background: #fafdfb;
+ overflow-x: hidden;
+}
+
+.bar {
+  padding: 1rem 10%;
+  display: flex;
+  background: var(--rosado--);
+  color: var(--Blanco-);
+  justify-content: space-between;
+  align-items: center;
+  word-spacing: 0.05rem;
+ 
+}
+
+.bar p {font-size: 1.2vw;}
+.bar span {
+  color: var(--Negro--);
+  font-weight: 600 ;
+}
+
+.bar a {
+  text-decoration: none;
+  color: var(--Negro--);
+  font-weight: 700;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 10%;
+  align-items: center;
+}
+
+menu {
+  display: flex;
+  font-size: 1.6rem;
+}
+
+.logo img {
+  width: 110px;
+  height: auto;
+}
+
+menu ul {
+  display: flex;
+  gap: 1.6rem;
+}
+
+menu ul li {
+  font-size: 1.6rem;
+  list-style-type: none;
+  color: var(--rosado--);
+  transform: translateY(0);
+  
+}
+
+menu ul li a {
+  display: block;
+  text-decoration: none;
+  color: var(--rosado--);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+menu ul li:hover a {
+  transform: translateY(-8px);
+  color: var(--VerdeOscuro--);
+}
+
+.cart-login {
+  display: flex;
+  font-size: 2rem;
+  gap: 1.6rem;
+  color: var(--Negro--);
+}
+
+.fa-user, .fa-bag-shopping {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fa-user:hover, .fa-bag-shopping:hover {
+  color: var(--VerdeOscuro--);
+}
+/*Reposive Pantallas de 1400 hacia abajo */
+
+@media screen and (max-width :1400px){
+  .bar {
+    padding: 1rem 5%;
+    }
+
+    .container{
+      padding: 0.5rem 5%;
+    }   
+
+}
+
+
+/*Reposive Pantallas de 1024 hacia abajo */
+
+@media screen and (max-width :1024px){
+  .bar {
+    padding: 1rem 5%;
+    }
+
+    .container{
+      padding: 0.5rem 5%;
+    }   
+
+}
+
+
+/*Reposive Pantallas de 880 hacia abajo */
+
+@media screen and (max-width :880px){
+  .bar {
+    padding: 1rem 2%;
+    }
+
+    .container{
+      padding: 0.5rem 2%;
+    }
+    
+    menu ul li {
+      font-size: 1.4rem;
+     
+      
+    }
+
+}
+
+
+@media screen and (max-width :767px){
+  .bar {
+    padding: 1rem 2%;
+  width: 100%;  
+  }
+
+  .bar p {font-size: 2vw;}
+
+    .container{
+      padding: 0.1rem 2%;
+    }
+    
+    menu ul li {
+      font-size: 1.4rem;
+     
+      
+    }
+
+    menu {
+      display: none;
+       
+    }
+
+    .logo img {
+      width: 90px;
+      height: auto;
+    }
+
+    .cart-login {
+      display: flex;
+      font-size: 1.8rem;
+      gap: 1.6rem;
+      color: var(--Negro--);
+    }
+
+}
+
+
