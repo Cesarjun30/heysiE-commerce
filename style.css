@@ -19,22 +19,23 @@ html {
   font-family: "Ubuntu", sans-serif;
 }
 
-
-
 p,
 h1,
 h2 {
   font-size: 1.4rem;
 }
 
-body, main {
+body,
+main {
   max-width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
+
 /*Pantallas Grandes 1920 en adelante */
 header {
-  width: 100vw; 
   background: #fafdfb;
- overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .bar {
@@ -45,13 +46,14 @@ header {
   justify-content: space-between;
   align-items: center;
   word-spacing: 0.05rem;
- 
 }
 
-.bar p {font-size: 1.2vw;}
+.bar p {
+  font-size: 0.8vw;
+}
 .bar span {
   color: var(--Negro--);
-  font-weight: 600 ;
+  font-weight: 600;
 }
 
 .bar a {
@@ -68,7 +70,7 @@ header {
   align-items: center;
 }
 
-menu {
+nav.mainMenu {
   display: flex;
   font-size: 1.6rem;
 }
@@ -78,20 +80,19 @@ menu {
   height: auto;
 }
 
-menu ul {
+nav.mainMenu menu {
   display: flex;
   gap: 1.6rem;
 }
 
-menu ul li {
+nav.mainMenu menu li {
   font-size: 1.6rem;
   list-style-type: none;
   color: var(--rosado--);
   transform: translateY(0);
-  
 }
 
-menu ul li a {
+nav.mainMenu menu li a {
   display: block;
   text-decoration: none;
   color: var(--rosado--);
@@ -99,7 +100,7 @@ menu ul li a {
   transition: all 0.2s ease;
 }
 
-menu ul li:hover a {
+nav.mainMenu menu li:hover a {
   transform: translateY(-8px);
   color: var(--VerdeOscuro--);
 }
@@ -111,97 +112,246 @@ menu ul li:hover a {
   color: var(--Negro--);
 }
 
-.fa-user, .fa-bag-shopping {
+.fa-user,
+.fa-bag-shopping {
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.fa-user:hover, .fa-bag-shopping:hover {
+.fa-user:hover,
+.fa-bag-shopping:hover {
   color: var(--VerdeOscuro--);
 }
+
 /*Reposive Pantallas de 1400 hacia abajo */
 
-@media screen and (max-width :1400px){
+@media screen and (max-width: 1400px) {
   .bar {
     padding: 1rem 5%;
-    }
+  }
 
-    .container{
-      padding: 0.5rem 5%;
-    }   
-
+  .bar p {
+    font-size: 1vw;
+  }
+  .container {
+    padding: 0.5rem 5%;
+  }
 }
-
 
 /*Reposive Pantallas de 1024 hacia abajo */
 
-@media screen and (max-width :1024px){
+@media screen and (max-width: 1024px) {
   .bar {
     padding: 1rem 5%;
-    }
+  }
 
-    .container{
-      padding: 0.5rem 5%;
-    }   
+  .bar p {
+    font-size: 1vw;
+  }
 
+  .bar p {
+    font-size: 1.6vw;
+  }
+
+  .container {
+    padding: 0.5rem 5%;
+  }
 }
-
 
 /*Reposive Pantallas de 880 hacia abajo */
 
-@media screen and (max-width :880px){
+@media screen and (max-width: 880px) {
   .bar {
     padding: 1rem 2%;
-    }
-
-    .container{
-      padding: 0.5rem 2%;
-    }
-    
-    menu ul li {
-      font-size: 1.4rem;
-     
-      
-    }
-
-}
-
-
-@media screen and (max-width :767px){
-  .bar {
-    padding: 1rem 2%;
-  width: 100%;  
   }
 
-  .bar p {font-size: 2vw;}
+  .bar p {
+    font-size: 1vw;
+  }
 
-    .container{
-      padding: 0.1rem 2%;
-    }
+  .container {
+    padding: 0.5rem 2%;
+  }
+
+  menu ul li {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .bar {
+    padding: 1rem 2%;
+    width: 100%;
+  }
+
+  .bar p {
+    font-size: 2vw;
+  }
+
+  .container {
+    padding: 0.1rem 2%;
+  }
+
+  nav menu li {
+    font-size: 1.4rem;
+  }
+
+  nav.mainMenu {
+    display: none;
+  }
+
+  .logo img {
+    width: 90px;
+    height: auto;
+  }
+
+  .cart-login {
+    display: flex;
+    font-size: 1.8rem;
+    gap: 1.6rem;
+    color: var(--Negro--);
+  }
+}
+
+section {
+  min-height: 100vh;
+}
+
+footer {
+  position: relative;
+  background: var(--rosado--) url("assets/Globos\ 2.png") no-repeat -100px -70px;
+  background-size: 800px auto;
     
-    menu ul li {
-      font-size: 1.4rem;
-     
-      
-    }
+}
 
-    menu {
-      display: none;
-       
-    }
+footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
 
-    .logo img {
-      width: 90px;
-      height: auto;
-    }
+.footerContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rem  10%;
+  color: var(--Blanco-);
+  justify-content: space-between;
+  gap: 100px;
+  }
 
-    .cart-login {
-      display: flex;
-      font-size: 1.8rem;
-      gap: 1.6rem;
-      color: var(--Negro--);
-    }
+ 
 
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+}
+
+.newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: column;
 }
 
 
+.newsletter h1, .menu h1, .faq h1, .horario h1  {
+    font-size: 2rem; 
+    color: var(--VerdeClaro--);
+  }
+
+.newsletter form label {
+  width: 70%;
+   line-height: 30px;
+  font-size:1.6rem;
+}
+
+.newsletter form input{
+  width: 100%;
+  border-radius: 0.7rem;
+  padding-left: 5px;
+  border: 1px solid var(--VerdeClaro--);
+  color: var(--rosado--);
+  }
+.newsletter form input:focus{
+  outline: none;
+}
+
+.newsletter .datos{
+  display: flex;
+  gap :20px;
+}
+.newsletter form button {
+  cursor: pointer;
+  border-radius: 0.7rem;
+  padding:1rem 1.5rem;
+  border :none;
+  transition: all 0.3s ease;
+  color: var(--Blanco-);
+  background: var(--VerdeOscuro--);
+}
+
+.newsletter form button:hover {
+  background: var(--Blanco-);
+  color: var(--rosado--);
+}
+
+nav.footerMenu menu li {
+  list-style-type: none;
+}
+
+.footerContainer .horario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.footerContainer .horario .tiempo {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.menu, .faq {
+  display: flex;
+  flex-direction: column;
+  gap: 20px ;
+}
+
+.menu menu li a {
+  display: block;
+  text-decoration: none;
+  color: var(--Blanco-);
+  font-size: 1.4rem;
+  margin-bottom:1rem ;
+  transform: scale(1);
+  transition: all 0.2s ease;
+}
+
+.menu menu li:hover a {
+  color: var(--VerdeOscuro--);
+  transform: scale(0.96);
+}
+
+.faq .faqlinks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.faqlinks p a {
+  text-decoration: none;
+  color: var(--Blanco-);
+  transition: all 0.2s ease;
+}
+
+.faqlinks p:hover a {
+  text-decoration: underline;
+  color: var(--VerdeOscuro--);
+}
