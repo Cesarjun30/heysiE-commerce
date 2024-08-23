@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
   --rosado--: #ff70c2;
   --VerdeClaro--: #68d943;
@@ -16,7 +18,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: "Ubuntu", sans-serif;
+  font-family:/* "Ubuntu"*/ "Poppins", sans-serif;
 }
 
 p,
@@ -52,14 +54,14 @@ header {
   font-size: 0.8vw;
 }
 .bar span {
-  color: var(--Negro--);
+  color: var(--VerdeClaro--);
   font-weight: 600;
 }
 
 .bar a {
   text-decoration: none;
-  color: var(--Negro--);
-  font-weight: 700;
+  color: var(--VerdeClaro--);
+  font-weight: 600;
 }
 
 .container {
@@ -123,7 +125,7 @@ nav.mainMenu menu li:hover a {
   color: var(--VerdeOscuro--);
 }
 
-/*Reposive Pantallas de 1400 hacia abajo */
+/*Reposive  header Pantallas de 1400 hacia abajo */
 
 @media screen and (max-width: 1400px) {
   .bar {
@@ -138,11 +140,11 @@ nav.mainMenu menu li:hover a {
   }
 }
 
-/*Reposive Pantallas de 1024 hacia abajo */
+/*Reposive  header Pantallas de 1024 hacia abajo */
 
 @media screen and (max-width: 1024px) {
   .bar {
-    padding: 1rem 5%;
+    padding: 1rem 2%;
   }
 
   .bar p {
@@ -154,11 +156,11 @@ nav.mainMenu menu li:hover a {
   }
 
   .container {
-    padding: 0.5rem 5%;
+    padding: 0.5rem 2%;
   }
 }
 
-/*Reposive Pantallas de 880 hacia abajo */
+/*Reposive header Pantallas de 880 hacia abajo */
 
 @media screen and (max-width: 880px) {
   .bar {
@@ -177,6 +179,8 @@ nav.mainMenu menu li:hover a {
     font-size: 1.4rem;
   }
 }
+
+/*Reposive header Pantallas de 767px hacia abajo */
 
 @media screen and (max-width: 767px) {
   .bar {
@@ -241,7 +245,7 @@ footer::before {
   padding: 10rem  10%;
   color: var(--Blanco-);
   justify-content: space-between;
-  gap: 100px;
+  
   }
 
  
@@ -256,8 +260,8 @@ footer::before {
 .newsletter form {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   flex-direction: column;
+  gap: 20px;
 }
 
 
@@ -278,15 +282,19 @@ footer::before {
   padding-left: 5px;
   border: 1px solid var(--VerdeClaro--);
   color: var(--rosado--);
+  height: 3.5rem;
   }
+
 .newsletter form input:focus{
   outline: none;
 }
 
 .newsletter .datos{
   display: flex;
-  gap :20px;
+  gap :10px;
+  align-items: center;
 }
+
 .newsletter form button {
   cursor: pointer;
   border-radius: 0.7rem;
@@ -295,6 +303,7 @@ footer::before {
   transition: all 0.3s ease;
   color: var(--Blanco-);
   background: var(--VerdeOscuro--);
+  align-self:start;
 }
 
 .newsletter form button:hover {
@@ -354,4 +363,83 @@ nav.footerMenu menu li {
 .faqlinks p:hover a {
   text-decoration: underline;
   color: var(--VerdeOscuro--);
+}
+
+/*Reposive footer Pantallas de 1400 hacia abajo */
+
+@media screen and (max-width: 1400px) {
+  .footerContainer{
+    padding:10rem  5%;
+  }
+
+}
+
+/*Reposive  footer Pantallas de 1024 hacia abajo */
+
+@media screen and (max-width: 1024px){
+ 
+  .footerContainer{
+    flex-wrap: wrap;
+    padding:10rem 2% 8rem 2%;
+  }
+  .newsletter form .datos {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*Reposive footer Pantallas de 880 hacia abajo */
+
+@media screen and (max-width: 880px) {
+  .footerContainer{
+    flex-wrap: wrap;
+    padding:10rem 2% 5rem 2%;
+  }
+
+}
+
+
+/*Reposive Footer Pantallas de 767px hacia abajo */
+
+@media screen and (max-width: 767px){
+
+  .footerContainer {
+    gap: 20px;
+  }
+  .footerContainer h1 {
+    text-align: center;
+  }
+  .newsletter, .horario, .menu, .faq {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footerContainer .horario .tiempo {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .newsletter form button {
+    align-self: center;
+    }
+
+    .newsletter form input{
+      width: 90%;
+    }
+    
+    .newsletter form label {
+      width: 100%;
+       text-align: center;
+    }
+
+    .menu menu, .faq  {
+     text-align: center;
+    }
+
+    footer {
+      position: relative;
+      background: var(--rosado--) ;
+      background-size: 800px auto;
+        
+    }
 }
