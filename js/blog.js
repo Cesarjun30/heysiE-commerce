@@ -1,10 +1,9 @@
-import './style.css'
-import './js/tienda.js'
+import '../style.css'
 
 
-document.querySelector('#app').innerHTML = `
+document.querySelector('#blog').innerHTML = `
   <main>
-<header>
+  <header>
         <div class="bar">
           <p>
             Aprovecha las ventas de temporada hasta un <span>30%</span> de
@@ -14,23 +13,21 @@ document.querySelector('#app').innerHTML = `
         </div>
         <div class="container">
           <div class="logo">
-            <a href="index.html"
+            <a href="../index.html"
               ><figure>
-                <img src="assets/HeysiLogo.svg" alt="logo-heysi" /></figure
+                <img src="../assets/HeysiLogo.svg" alt="logo-heysi" /></figure
             ></a>
           </div>
           <nav class="mainMenu">
             <menu>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="pages/tienda.html">Tienda</a></li>
-              <li>
-                <a href="pages/party-service"
-                  >Party-Service <i class="fa-solid fa-caret-down"></i
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="tienda.html" >Tienda</a></li>
+              <li><a href="partyservice.html">Party-Service <i class="fa-solid fa-caret-down"></i
                 ></a>
               </li>
-              <li><a href="pages/blog.html">Blog</a></li>
-              <li><a href="pages/sobre-nosotros.html">Nosotros</a></li>
-              <li><a href="pages/contacto.html">Contacto</a></li>
+              <li><a href="blog.html" class="active">Blog</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
             </menu>
           </nav>
 
@@ -40,9 +37,7 @@ document.querySelector('#app').innerHTML = `
           </div>
         </div>
       </header>
-
-
-      <section>  <p> SOY EL CONTENIDO PRINCIPAL</p> </section>
+      <section> <p>SOY EL BLOG</p> </section>
 
       <footer>
         <div class="footerContainer">
@@ -126,9 +121,6 @@ document.querySelector('#app').innerHTML = `
             </div>
           </div>
         </div>
-      </footer>
-      
+      </footer>     
   <main>
 `
-
-

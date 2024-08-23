@@ -1,10 +1,19 @@
-import './style.css'
-import './js/tienda.js'
-
-
-document.querySelector('#app').innerHTML = `
-  <main>
-<header>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="assets/HeysiLogo.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Sobre Nosotros</title>
+  </head>
+  <body>
+    <div id="nosotros">
+      <header>
         <div class="bar">
           <p>
             Aprovecha las ventas de temporada hasta un <span>30%</span> de
@@ -14,23 +23,21 @@ document.querySelector('#app').innerHTML = `
         </div>
         <div class="container">
           <div class="logo">
-            <a href="index.html"
+            <a href="../index.html"
               ><figure>
-                <img src="assets/HeysiLogo.svg" alt="logo-heysi" /></figure
+                <img src="../assets/HeysiLogo.svg" alt="logo-heysi" /></figure
             ></a>
           </div>
           <nav class="mainMenu">
             <menu>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="pages/tienda.html">Tienda</a></li>
-              <li>
-                <a href="pages/party-service"
-                  >Party-Service <i class="fa-solid fa-caret-down"></i
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="tienda.html" >Tienda</a></li>
+              <li><a href="partyservice.html">Party-Service <i class="fa-solid fa-caret-down"></i
                 ></a>
               </li>
-              <li><a href="pages/blog.html">Blog</a></li>
-              <li><a href="pages/sobre-nosotros.html">Nosotros</a></li>
-              <li><a href="pages/contacto.html">Contacto</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="nosotros.html"  class="active">Nosotros</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
             </menu>
           </nav>
 
@@ -40,9 +47,7 @@ document.querySelector('#app').innerHTML = `
           </div>
         </div>
       </header>
-
-
-      <section>  <p> SOY EL CONTENIDO PRINCIPAL</p> </section>
+      <section></section>
 
       <footer>
         <div class="footerContainer">
@@ -127,8 +132,7 @@ document.querySelector('#app').innerHTML = `
           </div>
         </div>
       </footer>
-      
-  <main>
-`
-
-
+    </div>
+    <script type="module" src="../js/nosotros.js"></script>
+  </body>
+</html>

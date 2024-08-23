@@ -94,6 +94,10 @@ nav.mainMenu menu li {
   transform: translateY(0);
 }
 
+nav.mainMenu menu li a.active{
+  color: var(--VerdeOscuro--);
+}
+
 nav.mainMenu menu li a {
   display: block;
   text-decoration: none;
