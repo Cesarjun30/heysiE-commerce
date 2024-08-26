@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+::selection{
+  background: var(--rosado--);
+  color: var(--VerdeClaro--);
+}
+
 :root {
+  --rosadotrans-- :rgba(255,112,194,0.7); 
   --rosado--: #ff70c2;
   --VerdeClaro--: #68d943;
   --VerdeOscuro--: #51a835;
@@ -35,6 +40,7 @@ main {
 }
 
 /*Pantallas Grandes 1920 en adelante */
+
 header {
   background: #fafdfb;
   overflow-x: hidden;
@@ -221,10 +227,211 @@ nav.mainMenu menu li:hover a {
   }
 }
 
-section {
+
+/*Estilos del contenido Principal */
+
+
+
+main {
   min-height: 100vh;
+
 }
 
+/*  <!-- container carrusel--> */
+
+section.hero{
+    position: relative;
+   height: 60vh;
+ width: 100%;
+overflow: hidden;
+}
+
+
+
+
+
+
+
+/* <!--Carruseles-->*/
+
+.slider {
+  
+ display: flex;
+ width: 300%;
+ transition: all 0.6s ease;
+ 
+
+}
+
+
+/* <!--slider section--> */
+
+.heroArea{
+  position: relative;
+  
+  width: calc(100% / 3);
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ padding: 10rem 3.33%;
+ height: 60vh;
+ 
+}
+
+div.heroArea:nth-of-type(1){background: url("/assets/friends-throwing-up-champagne-confetti.jpg") no-repeat center center/cover ;}
+div.heroArea:nth-of-type(2){background: url("/assets/delicious-cake-birthday-candles.jpg") no-repeat center center/cover ;}
+div.heroArea:nth-of-type(3){background: url("/assets/tasty-cake-party-ornaments.jpg") no-repeat center center/cover ;}
+
+
+ 
+.heroArea::before {
+  content:"";
+  position:absolute;
+  width: 100%;
+  height:60vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.45);
+  
+}
+ 
+
+.arrows{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 10%;
+  font-size: 5rem;
+  color: var(--rosadotrans--);
+  position: absolute;
+  top:450px ;
+}
+
+.fa-solid{
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+.fa-solid.fa-angle-left:hover, .fa-solid.fa-angle-right:hover  {
+  transform: scale(0.80);
+  color: var(--VerdeClaro--);
+}
+
+.heroArea .title{
+  position: relative;
+ font-size: 3rem;
+  font-weight: 700;
+  color: var(--Blanco-);
+}
+
+.heroArea h1 {
+  position: relative;
+  width: 40%;
+  font-size: 5rem;
+  color: var(--rosado--);
+ }
+
+.heroArea .description{
+  position: relative;
+  font-size: 1.5rem;
+  color: var(--Blanco-);
+  margin-bottom: 1rem;
+}
+
+.heroArea button {
+  color: var(--Blanco-);
+  font-size: 1.6rem;
+  font-weight: 500;
+  background: var(--VerdeOscuro--);
+  cursor: pointer;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 0.7rem ;
+align-self:start;
+transform: scale(1);
+transition: all 0.2s ease;
+}
+
+.heroArea button:hover{
+  transform: scale(0.97);
+  color: var(--rosado--);
+  background: var(--Blanco-);
+}
+
+/*Responsive hero Area */
+
+
+/*Reposive HeroArea / Slider Pantallas de 1400 hacia abajo */
+
+
+@media screen and (max-width: 1400px) {
+  section.hero{
+
+    height: 80vh;
+  }
+
+  .heroArea{
+   padding: 5rem 1.66%;
+   height: 80vh;
+   
+  }
+
+  .heroArea::before{
+    height: 80vh;
+  }
+
+  .arrows{
+   
+    top:400px ;
+  }
+
+}
+
+
+/*Reposive  header Pantallas de 1024 hacia abajo */
+
+@media screen and (max-width: 1024px) {
+  
+}
+
+/*Reposive header Pantallas de 880 hacia abajo */
+
+@media screen and (max-width: 880px) {
+  
+}
+
+/*Reposive header Pantallas de 767px hacia abajo */
+
+@media screen and (max-width: 767px) {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Estilos en el footer */
 footer {
   position: relative;
   background: var(--rosado--) url("assets/Globos\ 2.png") no-repeat -100px -70px;
