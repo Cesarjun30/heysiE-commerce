@@ -62,7 +62,7 @@ document.querySelector('#tienda').innerHTML = `
             <div class="logo">
               <a href="index.html"
                 ><figure>
-                  <img src="assets/HeysiLogo.svg" alt="logo-heysi" /></figure
+                  <img src="../assets/HeysiLogo.svg" alt="logo-heysi" /></figure
               ></a>
             </div>
           </div>

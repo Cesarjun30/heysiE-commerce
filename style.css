@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-::selection{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+::selection {
   background: var(--rosado--);
   color: var(--VerdeClaro--);
 }
 
 :root {
-  --rosadotrans-- :rgba(255,112,194,0.7); 
+  --rosadotrans--: #fff0f8;
   --rosado--: #ff70c2;
+  --verdetrans--:#f0fbeb;
   --VerdeClaro--: #68d943;
-  --VerdeOscuro--: #51a835;
+  --VerdeOscuro--: #51A835 ;
   --Negro--: #040404;
   --Blanco-: #ffffff;
 }
@@ -44,6 +45,10 @@ main {
 header {
   background: #fafdfb;
   overflow-x: hidden;
+}
+
+.secciones {
+  padding: 15rem 10%;
 }
 
 .bar {
@@ -100,7 +105,7 @@ nav.mainMenu menu li {
   transform: translateY(0);
 }
 
-nav.mainMenu menu li a.active{
+nav.mainMenu menu li a.active {
   color: var(--VerdeOscuro--);
 }
 
@@ -138,9 +143,11 @@ nav.mainMenu menu li:hover a {
 /*Reposive  header Pantallas de 1400 hacia abajo */
 
 @media screen and (max-width: 1400px) {
-  .bar {
+   .bar, .secciones {
     padding: 1rem 5%;
   }
+
+  
 
   .bar p {
     font-size: 1vw;
@@ -153,7 +160,7 @@ nav.mainMenu menu li:hover a {
 /*Reposive  header Pantallas de 1024 hacia abajo */
 
 @media screen and (max-width: 1024px) {
-  .bar {
+  .bar, .secciones {
     padding: 1rem 2%;
   }
 
@@ -173,7 +180,7 @@ nav.mainMenu menu li:hover a {
 /*Reposive header Pantallas de 880 hacia abajo */
 
 @media screen and (max-width: 880px) {
-  .bar {
+  .bar, .secciones {
     padding: 1rem 2%;
   }
 
@@ -193,8 +200,11 @@ nav.mainMenu menu li:hover a {
 /*Reposive header Pantallas de 767px hacia abajo */
 
 @media screen and (max-width: 767px) {
-  .bar {
+  .bar, .secciones {
     padding: 1rem 2%;
+  }
+
+  .bar {
     width: 100%;
   }
 
@@ -227,76 +237,65 @@ nav.mainMenu menu li:hover a {
   }
 }
 
-
 /*Estilos del contenido Principal */
-
-
 
 main {
   min-height: 100vh;
-
 }
 
 /*  <!-- container carrusel--> */
 
-section.hero{
-    position: relative;
-   height: 60vh;
- width: 100%;
-overflow: hidden;
+section.hero {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  overflow: hidden;
 }
-
-
-
-
-
-
 
 /* <!--Carruseles-->*/
 
 .slider {
-  
- display: flex;
- width: 300%;
- transition: all 0.6s ease;
- 
-
+  display: flex;
+  width: 300%;
+  transition: all 0.6s ease;
 }
-
 
 /* <!--slider section--> */
 
-.heroArea{
+.heroArea {
   position: relative;
-  
   width: calc(100% / 3);
- position: relative;
- display: flex;
- flex-direction: column;
- padding: 10rem 3.33%;
- height: 60vh;
- 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10rem 3.33%;
+  height: 60vh;
 }
 
-div.heroArea:nth-of-type(1){background: url("/assets/friends-throwing-up-champagne-confetti.jpg") no-repeat center center/cover ;}
-div.heroArea:nth-of-type(2){background: url("/assets/delicious-cake-birthday-candles.jpg") no-repeat center center/cover ;}
-div.heroArea:nth-of-type(3){background: url("/assets/tasty-cake-party-ornaments.jpg") no-repeat center center/cover ;}
+div.heroArea:nth-of-type(1) {
+  background: url("/assets/friends-throwing-up-champagne-confetti.jpg")
+    no-repeat center center/cover;
+}
+div.heroArea:nth-of-type(2) {
+  background: url("/assets/delicious-cake-birthday-candles.jpg") no-repeat
+    center center/cover;
+}
+div.heroArea:nth-of-type(3) {
+  background: url("/assets/tasty-cake-party-ornaments.jpg") no-repeat center
+    center/cover;
+}
 
-
- 
 .heroArea::before {
-  content:"";
-  position:absolute;
+  content: "";
+  position: absolute;
   width: 100%;
-  height:60vh;
+  height: 60vh;
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.45);
-  
 }
- 
 
-.arrows{
+.arrows {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -304,23 +303,24 @@ div.heroArea:nth-of-type(3){background: url("/assets/tasty-cake-party-ornaments.
   font-size: 5rem;
   color: var(--rosadotrans--);
   position: absolute;
-  top:450px ;
+  top: 450px;
 }
 
-.fa-solid{
+.fa-solid {
   cursor: pointer;
   transform: scale(1);
   transition: transform 0.2s ease;
 }
 
-.fa-solid.fa-angle-left:hover, .fa-solid.fa-angle-right:hover  {
-  transform: scale(0.80);
+.fa-solid.fa-angle-left:hover,
+.fa-solid.fa-angle-right:hover {
+  transform: scale(0.8);
   color: var(--VerdeClaro--);
 }
 
-.heroArea .title{
+.heroArea .title {
   position: relative;
- font-size: 3rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--Blanco-);
 }
@@ -330,9 +330,9 @@ div.heroArea:nth-of-type(3){background: url("/assets/tasty-cake-party-ornaments.
   width: 40%;
   font-size: 5rem;
   color: var(--rosado--);
- }
+}
 
-.heroArea .description{
+.heroArea .description {
   position: relative;
   font-size: 1.5rem;
   color: var(--Blanco-);
@@ -347,13 +347,13 @@ div.heroArea:nth-of-type(3){background: url("/assets/tasty-cake-party-ornaments.
   cursor: pointer;
   border: none;
   padding: 1rem 1.5rem;
-  border-radius: 0.7rem ;
-align-self:start;
-transform: scale(1);
-transition: all 0.2s ease;
+  border-radius: 0.7rem;
+  align-self: start;
+  transform: scale(1);
+  transition: all 0.2s ease;
 }
 
-.heroArea button:hover{
+.heroArea button:hover {
   transform: scale(0.97);
   color: var(--rosado--);
   background: var(--Blanco-);
@@ -361,54 +361,137 @@ transition: all 0.2s ease;
 
 /*Responsive hero Area */
 
-
 /*Reposive HeroArea / Slider Pantallas de 1400 hacia abajo */
 
-
 @media screen and (max-width: 1400px) {
-  section.hero{
-
+  section.hero {
     height: 80vh;
   }
 
-  .heroArea{
-   padding: 5rem 1.66%;
-   height: 80vh;
-   
-  }
-
-  .heroArea::before{
+  .heroArea {
+    padding: 5rem 1.66%;
     height: 80vh;
   }
 
-  .arrows{
-   
-    top:400px ;
+  .heroArea::before {
+    height: 80vh;
   }
 
+  .arrows {
+    top: 400px;
+  }
 }
 
-
-/*Reposive  header Pantallas de 1024 hacia abajo */
+/*Reposive HeroArea / Slider Pantallas de 1024 hacia abajo */
 
 @media screen and (max-width: 1024px) {
-  
 }
 
-/*Reposive header Pantallas de 880 hacia abajo */
+/*Reposive HeroArea / Slider Pantallas de 880 hacia abajo */
 
 @media screen and (max-width: 880px) {
-  
 }
 
-/*Reposive header Pantallas de 767px hacia abajo */
+/*Reposive HeroArea / Slider de 767px hacia abajo */
 
 @media screen and (max-width: 767px) {
+}
+
+/* Seccion para productos */
+/*mas pedidos*/
+
+.masPedidos {
+  display: flex;
+    background: var(--Blanco-);
+    flex-direction: column;
+    gap: 2rem;
+    
+   
+}
+.masPedidos h1 {
+  font-family: "Dosis", sans-serif;
+  font-size: 3.5rem;
+}
+
+.productsContainer{
+display:flex;
+gap: 20px;
+}
+
+.productos {
+  flex-grow:1;
+  flex-basis: 200px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 0.5rem;
+  border-radius: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
   
 }
 
+.productos:hover{
+  background: var(--verdetrans--);
+}
+
+.imagen{
+  position: relative;
+  background: var(--verdetrans----);
+  border-radius: 1.5rem;
+
+}
+
+.productos img {
+  display: block;
+  max-height: 200px;
+  width: auto;
+  object-fit: cover;
+  margin-bottom:3rem;
+
+}
 
 
+.productos .info{
+  display: flex;
+  gap: 3rem;
+}
+
+.info .nombreProducto{
+  font-size: 1.6rem;
+}
+
+.info .precio{
+  color: var(--VerdeOscuro--);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.productos .descripcionProducto{
+  font-weight: 500;
+  text-align: center;
+}
+
+.productos button {
+  cursor: pointer;
+  background: var(--rosado--);
+  color: var(--verdetrans--);
+  align-self: center;
+  width: 40%;
+  padding: 1rem 0.5rem;
+  border: none;
+  transform: scale(1);
+  transition: all 0.2s ease;
+  border-radius: 0.7rem;
+}
+
+.productos button:hover{
+  transform: scale(0.97);
+  color: var(--rosado--);
+  background:var(--Blanco-) ;
+}
 
 
 
@@ -436,7 +519,6 @@ footer {
   position: relative;
   background: var(--rosado--) url("assets/Globos\ 2.png") no-repeat -100px -70px;
   background-size: 800px auto;
-    
 }
 
 footer::before {
@@ -453,13 +535,10 @@ footer::before {
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 10rem  10%;
+  padding: 10rem 10%;
   color: var(--Blanco-);
   justify-content: space-between;
-  
-  }
-
- 
+}
 
 .newsletter {
   display: flex;
@@ -475,46 +554,48 @@ footer::before {
   gap: 20px;
 }
 
-
-.newsletter h1, .menu h1, .faq h1, .horario h1  {
-    font-size: 2rem; 
-    color: var(--VerdeClaro--);
-  }
+.newsletter h1,
+.menu h1,
+.faq h1,
+.horario h1 {
+  font-size: 2rem;
+  color: var(--VerdeClaro--);
+}
 
 .newsletter form label {
   width: 70%;
-   line-height: 30px;
-  font-size:1.6rem;
+  line-height: 30px;
+  font-size: 1.6rem;
 }
 
-.newsletter form input{
+.newsletter form input {
   width: 100%;
   border-radius: 0.7rem;
   padding-left: 5px;
   border: 1px solid var(--VerdeClaro--);
   color: var(--rosado--);
   height: 3.5rem;
-  }
+}
 
-.newsletter form input:focus{
+.newsletter form input:focus {
   outline: none;
 }
 
-.newsletter .datos{
+.newsletter .datos {
   display: flex;
-  gap :10px;
+  gap: 10px;
   align-items: center;
 }
 
 .newsletter form button {
   cursor: pointer;
   border-radius: 0.7rem;
-  padding:1rem 1.5rem;
-  border :none;
+  padding: 1rem 1.5rem;
+  border: none;
   transition: all 0.3s ease;
   color: var(--Blanco-);
   background: var(--VerdeOscuro--);
-  align-self:start;
+  align-self: start;
 }
 
 .newsletter form button:hover {
@@ -530,7 +611,6 @@ nav.footerMenu menu li {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 }
 
 .footerContainer .horario .tiempo {
@@ -539,10 +619,11 @@ nav.footerMenu menu li {
   gap: 20px;
 }
 
-.menu, .faq {
+.menu,
+.faq {
   display: flex;
   flex-direction: column;
-  gap: 20px ;
+  gap: 20px;
 }
 
 .menu menu li a {
@@ -550,7 +631,7 @@ nav.footerMenu menu li {
   text-decoration: none;
   color: var(--Blanco-);
   font-size: 1.4rem;
-  margin-bottom:1rem ;
+  margin-bottom: 1rem;
   transform: scale(1);
   transition: all 0.2s ease;
 }
@@ -579,19 +660,17 @@ nav.footerMenu menu li {
 /*Reposive footer Pantallas de 1400 hacia abajo */
 
 @media screen and (max-width: 1400px) {
-  .footerContainer{
-    padding:10rem  5%;
+  .footerContainer {
+    padding: 10rem 5%;
   }
-
 }
 
 /*Reposive  footer Pantallas de 1024 hacia abajo */
 
-@media screen and (max-width: 1024px){
- 
-  .footerContainer{
+@media screen and (max-width: 1024px) {
+  .footerContainer {
     flex-wrap: wrap;
-    padding:10rem 2% 8rem 2%;
+    padding: 10rem 2% 8rem 2%;
   }
   .newsletter form .datos {
     display: flex;
@@ -602,25 +681,25 @@ nav.footerMenu menu li {
 /*Reposive footer Pantallas de 880 hacia abajo */
 
 @media screen and (max-width: 880px) {
-  .footerContainer{
+  .footerContainer {
     flex-wrap: wrap;
-    padding:10rem 2% 5rem 2%;
+    padding: 10rem 2% 5rem 2%;
   }
-
 }
-
 
 /*Reposive Footer Pantallas de 767px hacia abajo */
 
-@media screen and (max-width: 767px){
-
+@media screen and (max-width: 767px) {
   .footerContainer {
     gap: 20px;
   }
   .footerContainer h1 {
     text-align: center;
   }
-  .newsletter, .horario, .menu, .faq {
+  .newsletter,
+  .horario,
+  .menu,
+  .faq {
     width: 100%;
     text-align: center;
   }
@@ -632,25 +711,25 @@ nav.footerMenu menu li {
 
   .newsletter form button {
     align-self: center;
-    }
+  }
 
-    .newsletter form input{
-      width: 90%;
-    }
-    
-    .newsletter form label {
-      width: 100%;
-       text-align: center;
-    }
+  .newsletter form input {
+    width: 90%;
+  }
 
-    .menu menu, .faq  {
-     text-align: center;
-    }
+  .newsletter form label {
+    width: 100%;
+    text-align: center;
+  }
 
-    footer {
-      position: relative;
-      background: var(--rosado--) ;
-      background-size: 800px auto;
-        
-    }
+  .menu menu,
+  .faq {
+    text-align: center;
+  }
+
+  footer {
+    position: relative;
+    background: var(--rosado--);
+    background-size: 800px auto;
+  }
 }

@@ -1,6 +1,11 @@
 //import './style.css'
 
 document.addEventListener("DOMContentLoaded", () => {
+  
+  // slider
+  
+  // declaracion de variables y constantes 
+  
   const slider = document.querySelector("#slider"),
     arrowLeft = document.querySelector("#left"),
     arrowRight = document.querySelector("#right"),
@@ -13,9 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // lo usamos para reiniciar el slider una vez ha recorrido todas las imagenes
   let counter = 0;
 
- setInterval(()=>{
-  toRight()
- },5000);
+ 
  
   const toRight = function (e) {
     if (counter >= sliderSection.length - 1) {
@@ -44,6 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   arrowLeft.addEventListener("click", toLeft);
   arrowRight.addEventListener("click", toRight);
+  
+  setInterval(()=>{
+    toRight()
+   },5000);
+
+   // Final cogio slider 
+   
+   
+
 });
 
 document.querySelector("#app").innerHTML = `
@@ -144,6 +156,66 @@ document.querySelector("#app").innerHTML = `
           </div>
 
         </section> 
+
+<section class="masPedidos secciones">
+  <h1>Los mas Pedidos</h1>
+  <div class="productsContainer">
+    <div class="productos">
+            <div class="imagen"><figure>
+              <img src="./assets/Productos/Mobiliarios/Cilindro-blanco-puro-para-cumplea-os-decoraciones-de-fiesta-de-boda.png" alt="">
+            </figure>
+          </div> <div class="info" >
+          <h2 class="nombreProducto">Juego de Cilindro</h2>
+          <p class="precio">$11,000.00</p>
+          </div>
+          <p class="descripcionProducto">Cilindro blanco purto Cumpleaños</p>
+          <button class="addToCart">Agregar al Carrito</button>
+          </div>
+
+
+           <div class="productos">
+            <div class="imagen"><figure>
+              <img src="./assets/Productos/Mobiliarios/Cilindro tipo romano.png" alt="">
+            </figure>
+          </div> <div class="info" >
+          <h2 class="nombreProducto">Juego de Cilindro Romano</h2>
+          <p class="precio">$11,000.00</p>
+          </div>
+          <p class="descripcionProducto">Estante para pastel de boda, columna romana</p>
+          <button class="addToCart">Agregar al Carrito</button>
+          </div>
+
+           <div class="productos">
+            <div class="imagen"><figure>
+              <img src="./assets/Productos/Mobiliarios/Cubiertas-de-z-calo-cil-ndrico-para-decoraciones-de-fiestas-mantel-de-Pedestal-Baby-Shower-boda.png" alt="">
+            </figure>
+          </div> <div class="info" >
+          <h2 class="nombreProducto">Cubierta de Zocalo Cilindrico</h2>
+          <p class="precio">$11,000.00</p>
+          </div>
+          <p class="descripcionProducto">Cubiertas de zócalo cilíndrico decoraciones...</p>
+          <button class="addToCart">Agregar al Carrito</button>
+          </div>
+
+           <div class="productos">
+            <div class="imagen">
+                <figure>
+                  <img src="./assets/Productos/Mobiliarios/Calcoman-as-de-vinilo-para-pared-para-fiesta-de-cumplea-os-pegatinas-de-tablero-de-plexigl.jpg_.png" alt="">
+                </figure>
+                </div> <div class="info" >
+               <h2 class="nombreProducto">Calcomania de vinilo</h2>
+               <p class="precio">$11,000.00</p>
+              </div>
+              <p class="descripcionProducto">Calcomanias de vinilo para fiesta de cumpleaños</p>
+              <button class="addToCart">Agregar al Carrito</button>
+            </div>
+          </div>
+      
+         
+        </section>
+
+        
+
 
       </main>
 
