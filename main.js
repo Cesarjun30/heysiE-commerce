@@ -1,11 +1,55 @@
 //import './style.css'
 
 document.addEventListener("DOMContentLoaded", () => {
+  /*=============================================
+  =            Super Menu            =
+  =============================================*/
+
+  /* Declaracion de variables  */
+
+  const btnCategorias = document.getElementById("btn-categorias"),
+        grid = document.getElementById("grid"),
+        esDispositivoMovil = () => window.innerWidth <= 800;
+
+  btnCategorias.addEventListener("mouseover", () => {
+    if (!esDispositivoMovil()) {
+      grid.classList.add("active");
+    }
+  });
+
+  grid.addEventListener('mouseleave', () =>{
+  //  grid.classList.remove('active')
+  })
+
+  const links = document.querySelectorAll('#menu .categorias a')
+  links.forEach((elemento) =>{
+    elemento.addEventListener('mouseenter',(e) => {
+      //console.log(e.target.dataset.categoria)
+     document.querySelectorAll('#menu .subcategoria').forEach((categoria)=>{
+      //console.log(categoria.dataset.categoria)
+   categoria.classList.remove('active')
+   if(categoria.dataset.categoria == e.target.dataset.categoria ){
+    categoria.classList.add('active')
+   }   
+    })
+    
+    })
+  })
+
+  /*=====  End of Super menu   ======*/
+
   
-  // slider
+ 
   
-  // declaracion de variables y constantes 
+
   
+  /*=============================================
+  =                 SLIDER                      =
+  =============================================*/
+  
+ 
+  // declaracion de variables y constantes
+
   const slider = document.querySelector("#slider"),
     arrowLeft = document.querySelector("#left"),
     arrowRight = document.querySelector("#right"),
@@ -18,19 +62,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // lo usamos para reiniciar el slider una vez ha recorrido todas las imagenes
   let counter = 0;
 
- 
- 
   const toRight = function (e) {
     if (counter >= sliderSection.length - 1) {
       counter = 0;
       calcPosicion = 0;
       slider.style.transform = `translate(-${calcPosicion}%)`;
       return;
-    } 
-      counter++;
-      calcPosicion += widthSliders;
-      slider.style.transform = `translate(-${calcPosicion}%)`;
-    
+    }
+    counter++;
+    calcPosicion += widthSliders;
+    slider.style.transform = `translate(-${calcPosicion}%)`;
   };
 
   const toLeft = function () {
@@ -47,24 +88,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   arrowLeft.addEventListener("click", toLeft);
   arrowRight.addEventListener("click", toRight);
-  
-  setInterval(()=>{
-    toRight()
-   },5000);
 
-   // Final cogio slider 
-   
-   
+  setInterval(() => {
+    toRight();
+  }, 5000);
 
+  // Final cogio slider
 });
 
 document.querySelector("#app").innerHTML = `
-  <main>
+ 
 
-  
-      <header>
 
-        <div class="bar">
+       <div class="bar">
           <p>
             Aprovecha las ventas de temporada hasta un <span>30%</span> de
             descuento <a href="#"> Compra Ahora</a>
@@ -72,41 +108,322 @@ document.querySelector("#app").innerHTML = `
           <p>Servicio al Cliente <a href="#"> +1-800-000-4499</a></p>
         </div>
 
-        <div class="container">
 
-          <div class="logo">
-            <a href="index.html"
-              ><figure>
-                <img src="assets/HeysiLogo.svg" alt="logo-heysi" /></figure
-            ></a>
+
+        <div class="menu" id="menu">
+         
+          <!-- <div class="containerCategoria">
+        
+           <div class ="categorias">
+            <h1 class="placeholder">Todas las categorias</h1>             
+            </div>
+
+            <ul class="listaCategoria">
+              <a href="#">Mobiliarios</a>
+              <a href="#">Floristeria</a>
+              <a href="#">Arreglos en Globos</a>
+              <a href="#">Arreglos en flores</a>
+              <a href="#">GiftShop</a>
+              <a href="#">Eventos</a>
+          
+            </ul>
+         </div> -->
+
+          <div class="contenedor-botones-menu">
+            <button id="btn-menu-barras" class="btn-menu-barras"><i class="fas fa-bars"></i></button>
+            <button id="btn-menu-cerrar" class="btn-menu-cerrar"><i class="fas fa-times"></i></button>
           </div>
 
-          <nav class="mainMenu">
+          <div class="contenedor-enlaces-nav">
+            
+            <div class="logo">
+              <a href="index.html"
+                ><figure>
+                  <img src="assets/HeysiLogo.svg" alt="logo-heysi" /></figure
+              ></a>
+            </div>
 
-            <menu>
+            <div class="btn-categorias" id="btn-categorias">
+              <p>Todas las<span>Categorias </span></p>
+              <i class="fas fa-caret-down"></i>
+            </div>
+        
 
-              <li><a href="index.html" class="active">Inicio</a></li>
-              <li><a href="/public/tienda.html">Tienda</a></li>
-              <li>
+            <nav class="mainMenu">
+
+              <menu>
+
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="/public/tienda.html">Tienda</a></li>
+                <li>
                 <a href="public/partyservice.html"
                   >Party-Service <i class="fa-solid fa-caret-down"></i
                 ></a>
-              </li>
-              <li><a href="/public/blog.html">Blog</a></li>
-              <li><a href="/public/nosotros.html">Nosotros</a></li>
-              <li><a href="/public/contacto.html">Contacto</a></li>
-            </menu>
+                </li>
+                <li><a href="/public/blog.html">Blog</a></li>
+                <li><a href="/public/nosotros.html">Nosotros</a></li>
+                <li><a href="/public/contacto.html">Contacto</a></li>
+              </menu>
 
-          </nav>
+            </nav>
 
-          <div class="cart-login">
-            <i class="fa-solid fa-user"></i>
-            <i class="fa-solid fa-bag-shopping"></i>
+            <div class="cart-login">
+              <i class="fa-solid fa-user"></i>
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+
+          </div>
+          
+          <div class="contenedor-grid">
+            
+            <div class="grid active" id="grid">
+              
+              <div class="categorias">
+
+                <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+              
+                <h3 class="subtitulo" >Categorias</h3>
+
+                <a href="#" data-categoria="mobiliarios">Mobiliarios <i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="floristeria">Floristeria<i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="arreglos-en-globos">Arreglos en Globos<i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="arreglos-en-flores">Arreglos en Flores<i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="giftshop">GiftShop<i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="eventos">Eventos<i class="fas fa-angle-right"></i></a>
+                
+              </div>
+
+          <div class="contenedor-subcategorias">
+                
+                <div class="subcategoria active" data-categoria="mobiliarios">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Mobiliarios</h3>
+                    <a href="#">Mesas</a>
+                    <a href="#">Estantes</a>
+                    <a href="#">Elevadores</a>
+                    <a href="#">Cilindros</a>
+                    <a href="#">Paneles</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+                
+                <div class="subcategoria" data-categoria="floristeria">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Floristeria</h3>
+                    <a href="#">Margaritas</a>
+                    <a href="#">Flor del Sol</a>
+                    <a href="#">Elevadores</a>
+                    <a href="#">Cilindros</a>
+                    <a href="#">Paneles</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+
+                <div class="subcategoria" data-categoria="arreglos-en-globos">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Arreglos en Globos</h3>
+                    <a href="#">Cadenas</a>
+                    <a href="#">Tematicos</a>
+                    <a href="#">Elevadores</a>
+                    <a href="#">Cilindros</a>
+                    <a href="#">Paneles</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+
+                <div class="subcategoria" data-categoria="arreglos-en-flores">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Mobiliarios</h3>
+                    <a href="#">Arreglos con rosas rojas</a>
+                    <a href="#">Arreglos con rosas blancas</a>
+                    <a href="#">Arreglos Mixtos</a>
+                    <a href="#">Cilindros</a>
+                    <a href="#">Paneles</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+
+                <div class="subcategoria" data-categoria="giftshop">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Mobiliarios</h3>
+                    <a href="#">relojes</a>
+                    <a href="#">recuerdos</a>
+                    <a href="#">Suveniles</a>
+                    <a href="#">DIY</a>
+                    <a href="#">Pan</a>
+                    <a href="#">recuerdos</a>
+                    <a href="#">Suveniles</a>
+                    <a href="#">DIY</a>
+                    <a href="#">recuerdos</a>
+                    <a href="#">Suveniles</a>
+                    <a href="#">DIY</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+
+                <div class="subcategoria" data-categoria="eventos">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Mobiliarios</h3>
+                    <a href="#">Quince años</a>
+                    <a href="#">Bodas</a>
+                    <a href="#">Graduaciones</a>
+                    <a href="#">Revelaciones de sexo</a>
+                    <a href="#">BabeShower</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+              
+              </div>
+                    
+
+            </div> 
+
+            
+
+         
           </div>
 
         </div>
 
-      </header>
+      
 
       <main> <!--Body -->
 
@@ -281,7 +598,7 @@ document.querySelector("#app").innerHTML = `
             </div>
           </div>
 
-          <div class="menu">
+          <div class="menuContainer">
             <h1>Menu</h1>
 
             <nav class="footerMenu">
@@ -312,5 +629,6 @@ document.querySelector("#app").innerHTML = `
       </footer>
 
 
-  </main>
+
+
 `;

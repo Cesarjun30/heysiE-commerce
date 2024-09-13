@@ -32,6 +32,7 @@ h1,
 h2 {
   font-size: 1.4rem;
 }
+a{ text-decoration: none;}
 
 body,
 main {
@@ -43,11 +44,15 @@ main {
 /*Pantallas Grandes 1920 en adelante */
 
 header {
+  
   background: #fafdfb;
-  overflow-x: hidden;
+  overflow: hidden;
+  
+    
 }
 
 .secciones {
+  max-width: 100%;
   padding: 15rem 10%;
 }
 
@@ -75,18 +80,329 @@ header {
   font-weight: 600;
 }
 
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.menu {
+  /*
+ width: 100%;
+ display: flex;
+ justify-content: space-between;*/
   padding: 0.5rem 10%;
   align-items: center;
+  position: relative;
+  z-index: 1000;
+  
+   }
+
+  .menu .contenedor-botones-menu{
+    
+    display: none;
+    justify-content: space-between;
+  }
+
+  .menu .contenedor-botones-menu button{
+    font-size: 2rem;
+    color: var(--rosado--);
+    padding: 1rem 1rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    background: none;
+    transition: all 0.3s ease;
+    border-radius: 0.7rem; 
+  }
+
+  .menu .contenedor-botones-menu button:hover{
+    border: 1px solid var(--VerdeOscuro--);
+  }
+
+
+  .menu .contenedor-botones-menu .btn-menu-cerrar{
+    display: none;
+  }
+
+  .menu .contenedor-botones-menu .btn-menu-cerrar.active{
+    display: inline-block;
+  }
+
+
+  .menu .contenedor-enlaces-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu .btn-categorias{
+    color: var(--rosado--);
+    padding: 0.7rem;
+    border-radius: 0.7rem;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid transparent;
+    font-size: 1.2rem;
+    cursor: default;
+    transition: all 0.3s ease;
+    
+  }
+
+  .menu .btn-categorias i {
+    margin-left:2rem ;
+    position: relative;
+    bottom: 0.5rem;
+  }
+
+  .menu .btn-categorias:hover{
+border: 1px solid var(--VerdeOscuro--);
+  }
+
+  .menu .btn-categorias span{
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+
+/*=============================================
+=            Grid Seccion             =
+=============================================*/
+
+.contenedor-grid{
+  position: relative;
+   
 }
+
+.grid{
+  font-size: 1.4rem;
+  width: 100%;
+  position: absolute;
+  top: 0.5rem;
+  left: 0%;
+  z-index: 1000;
+  display:none;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows:1fr;
+  grid-template-areas:"categorias subcategorias subcategorias  subcategorias";
+  }
+
+.grid.active{
+  display: grid;
+}
+
+.grid::before{
+  content:"";
+  display: block;
+  background: transparent;
+  border-left:5px solid transparent  ;
+  border-right:5px solid transparent ;
+  border-bottom:5px solid var(--rosado--) ;
+ position: absolute;
+ top: -5px;
+ left: 35rem;
+}
+
+
+.grid > div {
+  background: var(--rosado--);
+  box-shadow: 0 5px 5px 10px rgba(0, 0, 0, 0.06) ;
+  
+}
+
+
+/*=============================================
+=            Categorias             =
+=============================================*/
+
+
+
+.grid .btn-atras{
+  background: transparent;
+  border: 1px solid var(--Blanco-);
+  padding: 1rem;
+  color: var(--Blanco-);
+ display: flex;
+ gap: 0.5rem;
+ font-size: 1.6rem;
+ border-radius: 0.7rem;
+display: none;
+margin-left: 2rem;
+}
+
+
+
+.grid .categorias{
+  grid-area:categorias;
+  padding-top: 1rem ;
+  
+}
+
+.grid .categorias .subtitulo{
+  display: none;
+}
+
+.grid .categorias a {
+  color: var(--Blanco-);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+ 
+}
+
+.grid .categorias a i{
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.grid .categorias a:hover{
+  color: var(--VerdeClaro--);
+}
+
+.grid .categorias a:hover i{
+  display: inline-block;
+}
+
+
+/*=============================================
+=            Subcategorias            =
+=============================================*/
+
+
+.grid .contenedor-subcategorias{
+  grid-area: subcategorias;
+}
+
+.grid .subcategoria{
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+}
+
+
+.grid .subcategoria.active {
+  display:grid ;
+}
+
+
+
+.grid .subcategoria img {
+  width: 100%;
+  vertical-align: top;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid  .enlaces-subcategoria{
+ padding-top: 1rem;
+ height: 100%;
+ max-height: 300px;
+ overflow: auto;
+}
+
+.grid .enlaces-subcategoria a {
+  color: var(--Blanco-);
+  display: block;
+  font-size: 1.4rem;
+  padding:1rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.grid .enlaces-subcategoria a:hover {
+  color: var(--VerdeClaro--);
+  
+}
+
+.grid .subtitulo{
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: var(--Negro--);
+  padding: 1rem 2rem;
+}
+
+
+
+.grid .banner-subcategoria a {
+  display: block;
+}
+
+.grid .galeria-subcategoria{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+} 
+
+.grid .galeria-subcategoria a {
+  width: 50%;
+  height: 50%;
+}
+
+
+
+
+
+
 
 nav.mainMenu {
   display: flex;
   font-size: 1.6rem;
-}
+  }
+
+  /* .containerCategoria{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+   .categorias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--rosado--);
+    border-radius: 0.7rem;
+    padding: 0.2rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease ;
+    z-index: 999;  
+  }
+
+
+  .categorias h1 {
+   font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    
+  }
+
+  .categorias h1:hover {
+    font-weight: 400;
+     color: rgba(255, 255, 255, 0.5);
+   }
+
+  .listaCategoria{
+   display: none; 
+  position: absolute;
+    top: 95px;
+    left: 10%;
+    flex-direction: column;
+    background: var(--rosado--);
+    width: 10%;
+    padding: 0.5rem 2rem ;
+    transition: all 0.3s ease ;
+    border-radius: 0rem 0 0.7rem 0.7rem;
+    overflow-y: scroll;
+    z-index: 1500;
+  }
+
+ 
+  .categorias:hover{
+    color: var(--Blanco-);
+    background: var(--rosado--);
+    
+  }
+  .containerCategoria:hover .listaCategoria{
+        display: flex;    
+        z-index: 100;   
+  } */
+
+
+
 
 .logo img {
   width: 110px;
@@ -95,7 +411,7 @@ nav.mainMenu {
 
 nav.mainMenu menu {
   display: flex;
-  gap: 1.6rem;
+  gap: 5rem;
 }
 
 nav.mainMenu menu li {
@@ -152,7 +468,7 @@ nav.mainMenu menu li:hover a {
   .bar p {
     font-size: 1vw;
   }
-  .container {
+  .menu {
     padding: 0.5rem 5%;
   }
 }
@@ -172,7 +488,7 @@ nav.mainMenu menu li:hover a {
     font-size: 1.6vw;
   }
 
-  .container {
+  .menu {
     padding: 0.5rem 2%;
   }
 }
@@ -188,7 +504,7 @@ nav.mainMenu menu li:hover a {
     font-size: 1vw;
   }
 
-  .container {
+  .menu {
     padding: 0.5rem 2%;
   }
 
@@ -212,7 +528,7 @@ nav.mainMenu menu li:hover a {
     font-size: 2vw;
   }
 
-  .container {
+  .menu {
     padding: 0.1rem 2%;
   }
 
@@ -240,7 +556,9 @@ nav.mainMenu menu li:hover a {
 /*Estilos del contenido Principal */
 
 main {
+  
   min-height: 100vh;
+  
 }
 
 /*  <!-- container carrusel--> */
@@ -250,6 +568,7 @@ section.hero {
   height: 60vh;
   width: 100%;
   overflow: hidden;
+  
 }
 
 /* <!--Carruseles-->*/
@@ -258,7 +577,7 @@ section.hero {
   display: flex;
   width: 300%;
   transition: all 0.6s ease;
-}
+ }
 
 /* <!--slider section--> */
 
@@ -411,7 +730,7 @@ div.heroArea:nth-of-type(3) {
 .masPedidos h1 {
   font-family: "Dosis", sans-serif;
   font-size: 3.5rem;
-}
+ }
 
 .productsContainer{
 display:flex;
@@ -435,6 +754,7 @@ gap: 20px;
 
 .productos:hover{
   background: var(--verdetrans--);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
 }
 
 .imagen{
@@ -446,11 +766,12 @@ gap: 20px;
 
 .productos img {
   display: block;
-  max-height: 200px;
+  max-height: 20vh;
   width: auto;
-  object-fit: cover;
+  aspect-ratio: 4/4;
+  object-fit: contain;
   margin-bottom:3rem;
-
+  border-radius: 0.7rem;
 }
 
 
@@ -485,6 +806,7 @@ gap: 20px;
   transform: scale(1);
   transition: all 0.2s ease;
   border-radius: 0.7rem;
+  margin-top: 1.5rem;
 }
 
 .productos button:hover{
@@ -555,7 +877,7 @@ footer::before {
 }
 
 .newsletter h1,
-.menu h1,
+.menuContainer h1,
 .faq h1,
 .horario h1 {
   font-size: 2rem;
@@ -619,14 +941,14 @@ nav.footerMenu menu li {
   gap: 20px;
 }
 
-.menu,
+.menuContainer,
 .faq {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.menu menu li a {
+.menuContainer menu li a {
   display: block;
   text-decoration: none;
   color: var(--Blanco-);
@@ -636,7 +958,7 @@ nav.footerMenu menu li {
   transition: all 0.2s ease;
 }
 
-.menu menu li:hover a {
+.menuContainer menu li:hover a {
   color: var(--VerdeOscuro--);
   transform: scale(0.96);
 }
@@ -698,7 +1020,7 @@ nav.footerMenu menu li {
   }
   .newsletter,
   .horario,
-  .menu,
+  .menuContainer,
   .faq {
     width: 100%;
     text-align: center;
@@ -722,7 +1044,7 @@ nav.footerMenu menu li {
     text-align: center;
   }
 
-  .menu menu,
+  .menuContainer menu,
   .faq {
     text-align: center;
   }

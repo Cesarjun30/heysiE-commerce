@@ -14,9 +14,10 @@
   <body>
     <div id="app">
 
-      <header>
+      
 
-        <div class="bar secciones">
+
+        <div class="bar">
           <p>
             Aprovecha las ventas de temporada hasta un <span>30%</span> de
             descuento <a href="#"> Compra Ahora</a>
@@ -24,41 +25,320 @@
           <p>Servicio al Cliente <a href="#"> +1-800-000-4499</a></p>
         </div>
 
-        <div class="container">
 
-          <div class="logo">
-            <a href="index.html"
-              ><figure>
-                <img src="assets/HeysiLogo.svg" alt="logo-heysi" /></figure
-            ></a>
+
+        <div class="menu" id="menu">
+         
+          <!-- <div class="containerCategoria">
+        
+           <div class ="categorias">
+            <h1 class="placeholder">Todas las categorias</h1>             
+            </div>
+
+            <ul class="listaCategoria">
+              <a href="#">Mobiliarios</a>
+              <a href="#">Floristeria</a>
+              <a href="#">Arreglos en Globos</a>
+              <a href="#">Arreglos en flores</a>
+              <a href="#">GiftShop</a>
+              <a href="#">Eventos</a>
+          
+            </ul>
+         </div> -->
+
+          <div class="contenedor-botones-menu">
+            <button id="btn-menu-barras" class="btn-menu-barras"><i class="fas fa-bars"></i></button>
+            <button id="btn-menu-cerrar" class="btn-menu-cerrar"><i class="fas fa-times"></i></button>
           </div>
 
-          <nav class="mainMenu">
+          <div class="contenedor-enlaces-nav">
+            
+            <div class="logo">
+              <a href="index.html"
+                ><figure>
+                  <img src="assets/HeysiLogo.svg" alt="logo-heysi" /></figure
+              ></a>
+            </div>
 
-            <menu>
+            <div class="btn-categorias" id="btn-categorias">
+              <p>Todas las<span>Categorias </span></p>
+              <i class="fas fa-caret-down"></i>
+            </div>
+        
 
-              <li><a href="index.html" class="active">Inicio</a></li>
-              <li><a href="/public/tienda.html">Tienda</a></li>
-              <li>
+            <nav class="mainMenu">
+
+              <menu>
+
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="/public/tienda.html">Tienda</a></li>
+                <li>
                 <a href="public/partyservice.html"
                   >Party-Service <i class="fa-solid fa-caret-down"></i
                 ></a>
-              </li>
-              <li><a href="/public/blog.html">Blog</a></li>
-              <li><a href="/public/nosotros.html">Nosotros</a></li>
-              <li><a href="/public/contacto.html">Contacto</a></li>
-            </menu>
+                </li>
+                <li><a href="/public/blog.html">Blog</a></li>
+                <li><a href="/public/nosotros.html">Nosotros</a></li>
+                <li><a href="/public/contacto.html">Contacto</a></li>
+              </menu>
 
-          </nav>
+            </nav>
 
-          <div class="cart-login">
-            <i class="fa-solid fa-user"></i>
-            <i class="fa-solid fa-bag-shopping"></i>
+            <div class="cart-login">
+              <i class="fa-solid fa-user"></i>
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+
+          </div>
+          
+          <div class="contenedor-grid">
+            
+            <div class="grid" id="grid">
+              
+              <div class="categorias">
+                <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                <h3 class="subtitulo" >Categorias</h3>
+
+                <a href="#" data-categoria="mobiliarios">Mobiliarios <i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="floristeria">Floristeria<i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="arreglos-en-globos">Arreglos en Globos<i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="arreglos-en-flores">Arreglos en Flores<i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="giftshop">GiftShop<i class="fas fa-angle-right"></i></a>
+                <a href="#" data-categoria="eventos">Eventos<i class="fas fa-angle-right"></i></a>
+                
+              </div>
+
+              <div class="contenedor-subcategorias">
+                
+                <div class="subcategoria active" data-categoria="mobiliarios">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Mobiliarios</h3>
+                    <a href="#">Mesas</a>
+                    <a href="#">Estantes</a>
+                    <a href="#">Elevadores</a>
+                    <a href="#">Cilindros</a>
+                    <a href="#">Paneles</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+                
+                <div class="subcategoria" data-categoria="floristeria">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Floristeria</h3>
+                    <a href="#">Margaritas</a>
+                    <a href="#">Flor del Sol</a>
+                    <a href="#">Elevadores</a>
+                    <a href="#">Cilindros</a>
+                    <a href="#">Paneles</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+
+                <div class="subcategoria" data-categoria="arreglos-en-globos">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Arreglos en Globos</h3>
+                    <a href="#">Cadenas</a>
+                    <a href="#">Tematicos</a>
+                    <a href="#">Elevadores</a>
+                    <a href="#">Cilindros</a>
+                    <a href="#">Paneles</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+
+                <div class="subcategoria" data-categoria="arreglos-en-flores">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Mobiliarios</h3>
+                    <a href="#">Arreglos con rosas rojas</a>
+                    <a href="#">Arreglos con rosas blancas</a>
+                    <a href="#">Arreglos Mixtos</a>
+                    <a href="#">Cilindros</a>
+                    <a href="#">Paneles</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+
+                <div class="subcategoria" data-categoria="giftshop">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Mobiliarios</h3>
+                    <a href="#">relojes</a>
+                    <a href="#">recuerdos</a>
+                    <a href="#">Suveniles</a>
+                    <a href="#">DIY</a>
+                    <a href="#">Pan</a>
+                    <a href="#">recuerdos</a>
+                    <a href="#">Suveniles</a>
+                    <a href="#">DIY</a>
+                    <a href="#">recuerdos</a>
+                    <a href="#">Suveniles</a>
+                    <a href="#">DIY</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+
+                <div class="subcategoria" data-categoria="eventos">
+
+                  <div class="enlaces-subcategoria">
+                    <button class="btn-atras"><i class="fa-solid fa-arrow-left"></i>Atras</button>
+                    <h3 class="subtitulo">Mobiliarios</h3>
+                    <a href="#">Quince años</a>
+                    <a href="#">Bodas</a>
+                    <a href="#">Graduaciones</a>
+                    <a href="#">Revelaciones de sexo</a>
+                    <a href="#">BabeShower</a>
+                  </div>
+
+                  <div class="banner-subcategoria">
+                    <a href="">
+                      <img src="/assets/Productos/Mobiliarios/S5911053d895c49ef8b417db3458bc81bT.jpg_640x640.jpg_.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="galeria-subcategoria">
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Azul.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Decorado.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel oso.jpg_.avif" alt="">
+                    </a>
+                    <a href="#">
+                      <img src="assets/Productos/Mobiliarios/Paneles/Panel Rosado.jpg_.avif" alt="">
+                    </a>
+                  </div>
+
+                </div> 
+              
+              </div>
+                    
+
+            </div> 
+
+            
+
+         
           </div>
 
         </div>
 
-      </header>
+      
 
       <main> <!--Body -->
 
@@ -109,62 +389,65 @@
 
         </section> 
 
-        
 <section class="masPedidos secciones">
-  <div class="sectionTitle"><h1>Los mas Pedidos</h1></div>
- 
-  <div class="productos">
-             <div class="imagen"><figure>
-               <img src="./assets/Productos/Mobiliarios/Cilindro-blanco-puro-para-cumplea-os-decoraciones-de-fiesta-de-boda.png" alt="">
-             </figure>
-           </div> <div class="info" >
-           <h2 class="nombreProducto">Juego de Cilindro</h2>
-           <p class="precio">$11,000.00</p>
-           </div>
-           <p class="descripcionProducto">Cilindro blanco purto Cumpleaños</p>
-           <button class="addToCart">Agregar al Carrito</button>
-           </div>
- 
- 
-            <div class="productos">
-             <div class="imagen"><figure>
-               <img src="./assets/Productos/Mobiliarios/Cilindro tipo romano.png" alt="">
-             </figure>
-           </div> <div class="info" >
-           <h2 class="nombreProducto">Juego de Cilindro Romano</h2>
-           <p class="precio">$11,000.00</p>
-           </div>
-           <p class="descripcionProducto">Estante para pastel de boda, columna romana</p>
-           <button class="addToCart">Agregar al Carrito</button>
-           </div>
- 
-            <div class="productos">
-             <div class="imagen"><figure>
-               <img src="./assets/Productos/Mobiliarios/Cubiertas-de-z-calo-cil-ndrico-para-decoraciones-de-fiestas-mantel-de-Pedestal-Baby-Shower-boda.png" alt="">
-             </figure>
-           </div> <div class="info" >
-           <h2 class="nombreProducto">Cubierta de Zocalo Cilindrico</h2>
-           <p class="precio">$11,000.00</p>
-           </div>
-           <p class="descripcionProducto">Cubiertas de zócalo cilíndrico decoraciones...</p>
-           <button class="addToCart">Agregar al Carrito</button>
-           </div>
- 
-            <div class="productos">
-             <div class="imagen"><figure>
-               <img src="./assets/Productos/Mobiliarios/Calcoman-as-de-vinilo-para-pared-para-fiesta-de-cumplea-os-pegatinas-de-tablero-de-plexigl.jpg_.png" alt="">
-             </figure>
-           </div> <div class="info" >
-           <h2 class="nombreProducto">Calcomania de vinilo</h2>
-           <p class="precio">$11,000.00</p>
-           </div>
-           <p class="descripcionProducto">Calcomanias de vinilo para fiesta de cumpleaños</p>
-           <button class="addToCart">Agregar al Carrito</button>
-           </div>
-       
-          
-         </section>
+  <h1>Los mas Pedidos</h1>
+  <div class="productsContainer">
+    <div class="productos">
+            <div class="imagen"><figure>
+              <img src="./assets/Productos/Mobiliarios/Cilindro-blanco-puro-para-cumplea-os-decoraciones-de-fiesta-de-boda.png" alt="">
+            </figure>
+          </div> <div class="info" >
+          <h2 class="nombreProducto">Juego de Cilindro</h2>
+          <p class="precio">$11,000.00</p>
+          </div>
+          <p class="descripcionProducto">Cilindro blanco purto Cumpleaños</p>
+          <button class="addToCart">Agregar al Carrito</button>
+          </div>
+
+
+           <div class="productos">
+            <div class="imagen"><figure>
+              <img src="./assets/Productos/Mobiliarios/Cilindro tipo romano.png" alt="">
+            </figure>
+          </div> <div class="info" >
+          <h2 class="nombreProducto">Juego de Cilindro Romano</h2>
+          <p class="precio">$11,000.00</p>
+          </div>
+          <p class="descripcionProducto">Estante para pastel de boda, columna romana</p>
+          <button class="addToCart">Agregar al Carrito</button>
+          </div>
+
+           <div class="productos">
+            <div class="imagen"><figure>
+              <img src="./assets/Productos/Mobiliarios/Cubiertas-de-z-calo-cil-ndrico-para-decoraciones-de-fiestas-mantel-de-Pedestal-Baby-Shower-boda.png" alt="">
+            </figure>
+          </div> <div class="info" >
+          <h2 class="nombreProducto">Cubierta de Zocalo Cilindrico</h2>
+          <p class="precio">$11,000.00</p>
+          </div>
+          <p class="descripcionProducto">Cubiertas de zócalo cilíndrico decoraciones...</p>
+          <button class="addToCart">Agregar al Carrito</button>
+          </div>
+
+           <div class="productos">
+            <div class="imagen">
+                <figure>
+                  <img src="./assets/Productos/Mobiliarios/Calcoman-as-de-vinilo-para-pared-para-fiesta-de-cumplea-os-pegatinas-de-tablero-de-plexigl.jpg_.png" alt="">
+                </figure>
+                </div> <div class="info" >
+               <h2 class="nombreProducto">Calcomania de vinilo</h2>
+               <p class="precio">$11,000.00</p>
+              </div>
+              <p class="descripcionProducto">Calcomanias de vinilo para fiesta de cumpleaños</p>
+              <button class="addToCart">Agregar al Carrito</button>
+            </div>
+          </div>
+      
+         
+        </section>
+
         
+
 
       </main>
 
@@ -230,7 +513,7 @@
             </div>
           </div>
 
-          <div class="menu">
+          <div class="menuContainer">
             <h1>Menu</h1>
 
             <nav class="footerMenu">
@@ -259,6 +542,7 @@
         </div>
 
       </footer>
+
      
 
     </div>
@@ -266,3 +550,7 @@
     <script type="module" src="main.js"></script>
   </body>
 </html>
+
+
+
+
